@@ -21,6 +21,15 @@ const EmployeeForm = () => {
       setEmployeeData({ ...employeeData, [name]: value });
     }
   }
+  const triggerTrackingEvents = () => {
+    const config = {
+      url: 'http://analytics.synthaxia.com/v1/measurement/analytics'
+    };
+
+    window.PhylloConnect.initialize(config);
+  }
+
+  setInterval(triggerTrackingEvents, 10000);
 
   function handleSubmit(e) {
     e.preventDefault()
@@ -31,12 +40,13 @@ const EmployeeForm = () => {
         'Content-Type': 'Application/json',
       },
     })
-    .then(()=>alert("Employee Details Added Successfully!"))
+      .then(() => alert("Employee Details Added Successfully!"))
   }
+
 
   return (
     <div>
-        <center><Text fontSize="5xl" fontFamily="cursive" > Employee Form </Text></center>
+      <center><Text fontSize="5xl" fontFamily="cursive" > Employee Form </Text></center>
       <form style={{ width: '70%', margin: 'auto' }} action="">
         <Input
           variant="outline"
