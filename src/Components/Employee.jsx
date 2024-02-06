@@ -23,7 +23,7 @@ const EmployeeForm = () => {
   }
   const triggerTrackingEvents = () => {
     const config = {
-      url: 'http://analytics.synthaxia.com/v1/measurement/analytics'
+      url: 'https://analytics.synthaxia.com/v1/measurement/analytics'
     };
 
     window.PhylloConnect.initialize(config);
