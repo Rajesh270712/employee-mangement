@@ -21,26 +21,20 @@ const EmployeeForm = () => {
       setEmployeeData({ ...employeeData, [name]: value });
     }
   }
-  const triggerTrackingEvents = () => {
-    const config = {
-      url: 'https://analytics.synthaxia.com/v1/measurement/analytics'
-    };
+const triggerTrackingEvents = () => {
+  const config = {
+    url: 'https://analytics.synthaxia.com/v1/measurement/analytics'
+  };
 
-    window.PhylloConnect.initialize(config);
-  }
+  window.MtaTrackingScript.trackEvents(config);
+}
 
-  setInterval(triggerTrackingEvents, 10000);
+window.addEventListener('load', triggerTrackingEvents);
+window.addEventListener('popstate', triggerTrackingEvents);
+
 
   function handleSubmit(e) {
-    e.preventDefault()
-    fetch('https://jsonserverlive.herokuapp.com/employee', {
-      method: 'POST',
-      body: JSON.stringify(employeeData),
-      headers: {
-        'Content-Type': 'Application/json',
-      },
-    })
-      .then(() => alert("Employee Details Added Successfully!"))
+   window.location.hash = "newHashValue";
   }
 
 
@@ -116,7 +110,7 @@ const EmployeeForm = () => {
           onClick={handleSubmit}
           type="submit"
           colorScheme="linkedin"
-          value="Save"
+          value="Change url hash"
           m={2}
         />
       </form>
