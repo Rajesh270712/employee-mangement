@@ -21,16 +21,17 @@ const EmployeeForm = () => {
       setEmployeeData({ ...employeeData, [name]: value });
     }
   }
-const triggerTrackingEvents = () => {
-  const config = {
-    url: 'https://analytics.synthaxia.com/v1/measurement/analytics'
-  };
 
-  window.MtaTrackingScript.trackEvents(config);
-}
+  const triggerTrackingEvents = () => {
+    const config = {
+      url: 'https://analytics.synthaxia.com/v1/measurement/analytics'
+    };
 
-window.addEventListener('load', triggerTrackingEvents);
-window.addEventListener('popstate', triggerTrackingEvents);
+    window.MtaTrackingScript.trackEvents(config);
+  }
+
+  window.addEventListener('load', triggerTrackingEvents);
+  window.addEventListener('popstate', triggerTrackingEvents);
 
 
   function handleSubmit(e) {
