@@ -35,7 +35,12 @@ const EmployeeForm = () => {
 
 
   function handleSubmit(e) {
-   window.location.hash = "newHashValue";
+    e.preventDefault();
+    const urlParams = new URLSearchParams(window.location.search);
+    urlParams.set('user_id', '23452345');
+    urlParams.set('utm_source', 'amazon');
+    urlParams.set('utm_medium', 'youtube');
+    window.location.search = urlParams.toString();
   }
 
 

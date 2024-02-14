@@ -5,9 +5,9 @@ import { useEffect } from "react";
 const FakeData = () => {    
     const [products ,setProducts] = useState([])
     function getProductsData(){
-        fetch("https://jsonserverlive.herokuapp.com/products")
-        .then((response)=> response.json())
-        .then((response)=> setProducts(response))
+        // fetch("https://jsonserverlive.herokuapp.com/products")
+        // .then((response)=> response.json())
+        // .then((response)=> setProducts(response))
 
     }
 
