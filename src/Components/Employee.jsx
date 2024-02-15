@@ -22,18 +22,6 @@ const EmployeeForm = () => {
     }
   }
 
-  const triggerTrackingEvents = () => {
-    const config = {
-      url: 'https://analytics.synthaxia.com/v1/measurement/analytics'
-    };
-
-    window.MtaTrackingScript.trackEvents(config);
-  }
-
-  window.addEventListener('load', triggerTrackingEvents);
-  window.addEventListener('popstate', triggerTrackingEvents);
-
-
   function handleSubmit(e) {
     e.preventDefault();
     const urlParams = new URLSearchParams(window.location.search);
@@ -42,7 +30,6 @@ const EmployeeForm = () => {
     urlParams.set('utm_medium', 'youtube');
     window.location.search = urlParams.toString();
   }
-
 
   return (
     <div>

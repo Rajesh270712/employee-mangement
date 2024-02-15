@@ -18,10 +18,9 @@
   <script 
     type="text/javascript" 
     src="https://cdn.dev.getphyllo.com/insightIq/v4/tracking-script.js" 
-    async
     destinationUrl="https://analytics.synthaxia.com/v1/measurement/analytics"
-    onScriptLoad='true'
-    testArray=[onLoad,urlChange]
+    triggerEvents='{"onLoad": true, "onUrlChange": true, "onRegularInterval": 3000}'
+    async
   ></script>
   <!--
       Notice the use of %PUBLIC_URL% in the tags above.
