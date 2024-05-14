@@ -32,7 +32,7 @@ const navigate = useNavigate();
     // urlParams.set('utm_medium', 'youtube');
     // window.location.search = urlParams.toString();
     const num= Math.floor(Math.random() * 123)
-    navigate(`/user_id=${num}`)
+    navigate(`?user_id=${num}`)
   }
   return (
     <div>
