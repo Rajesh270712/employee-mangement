@@ -1,7 +1,9 @@
-import { Checkbox, Input, Radio, Stack, Text } from '@chakra-ui/react';
+import { Checkbox, Input, Link, Radio, Stack, Text } from '@chakra-ui/react';
 import { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 
 const EmployeeForm = () => {
+const navigate = useNavigate();
   const [employeeData, setEmployeeData] = useState({
     name: '',
     email: '',
@@ -24,15 +26,17 @@ const EmployeeForm = () => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    const urlParams = new URLSearchParams(window.location.search);
-    urlParams.set('user_id', '01606ee7-790e-436c-abc5-aabe83700fd2');
-    urlParams.set('utm_source', 'amazon');
-    urlParams.set('utm_medium', 'youtube');
-    window.location.search = urlParams.toString();
+    // const urlParams = new URLSearchParams(window.location.search);
+    // urlParams.set('user_id', '01606ee7-790e-436c-abc5-aabe83700fd2');
+    // urlParams.set('utm_source', 'amazon');
+    // urlParams.set('utm_medium', 'youtube');
+    // window.location.search = urlParams.toString();
+    const num= Math.floor(Math.random() * 123)
+    navigate(`/user_id=${num}`)
   }
-
   return (
     <div>
+
       <center><Text fontSize="5xl" fontFamily="cursive" > Employee Form </Text></center>
       <form style={{ width: '70%', margin: 'auto' }} action="">
         <Input
